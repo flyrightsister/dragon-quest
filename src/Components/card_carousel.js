@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Carousel from 'react-bootstrap/lib/Carousel';
 
-export default class ControlledCarousel extends Component {
+class ControlledCarousel extends Component {
   constructor(props, context) {
     super(props, context);
 
@@ -22,6 +23,8 @@ export default class ControlledCarousel extends Component {
 
   render() {
     const { index, direction } = this.state;
+
+    console.log('props', this.props);
 
     return (
       <Carousel
@@ -93,3 +96,9 @@ export default class ControlledCarousel extends Component {
         );
       }
 }
+
+function mapStateToProps({ dragons }) {
+  return { dragons };
+}
+
+export default connect(mapStateToProps)(ControlledCarousel);
