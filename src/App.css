@@ -1,3 +1,17 @@
 .App {
   text-align: center;
 }
+
+.carousel {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.carousel-item {
+  background-color: blue;
+  height: 400px;
+  width: 400px;
+}
