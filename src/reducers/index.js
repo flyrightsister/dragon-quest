@@ -1,7 +1,10 @@
 import { combineReducers } from 'redux';
+import DragonsReducer from './reducer_dragons';
+import RandomDragonReducer from './reducer_random_dragon';
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  dragons: DragonsReducer,
+  randomDragon: RandomDragonReducer,
 });
 
 export default rootReducer;

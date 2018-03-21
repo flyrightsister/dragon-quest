@@ -15,3 +15,9 @@
   height: 400px;
   width: 400px;
 }
+
+.dragon-card-container {
+  border: 1px solid grey;
+  margin: 20px auto;
+  width: 400px;
+}
