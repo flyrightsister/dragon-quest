@@ -9,6 +9,7 @@ class ControlledCarousel extends Component {
     super(props, context);
 
     this.handleSelect = this.handleSelect.bind(this);
+    this.generateKey = this.generateKey.bind(this);
 
     this.state = {
       index: 0,
@@ -21,6 +22,11 @@ class ControlledCarousel extends Component {
       index: selectedIndex,
       direction: e.direction
     });
+  }
+
+  generateKey() {
+    const randomNum = Math.floor(Math.random() * 10000);
+    return `${randomNum}_${new Date().getTime()}`;
   }
 
 
@@ -39,7 +45,7 @@ class ControlledCarousel extends Component {
             {this.props.dragons.map((dragon) => {
               return (
               <Carousel.Item
-                key={dragon.id}
+                key={this.generateKey()}
                 className="carousel-item">
                 <DragonCard
                   imageUrl={dragon.imageUrl}
