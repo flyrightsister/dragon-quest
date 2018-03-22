@@ -1,7 +1,8 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import DragonCard from '../Components/dragon_card.js';
-import { getRandomDragon, addToUserDragons } from '../actions';
+import { getRandomDragon } from '../actions';
+import { addToUserDragons } from '../actions';
 
 class GetRandomDragon extends Component {
   constructor(props) {
@@ -10,6 +11,9 @@ class GetRandomDragon extends Component {
     this.state = {
 
     }
+
+    this.getNewDragon = this.getNewDragon.bind(this);
+    this.addDragonToCollection = this.addDragonToCollection.bind(this);
   }
 
   componentDidMount() {
@@ -18,18 +22,27 @@ class GetRandomDragon extends Component {
   }
 
   getNewDragon() {
-    // make a new fetch call.
+    this.props.getRandomDragon(1);
+  }
+
+  addDragonToCollection() {
+    this.props.addToUserDragons(this.props.randomDragon)
+    this.props.getRandomDragon(1);
   }
 
 
   render() {
-    console.log('this.props in random dragon render function', this.props)
     return (
       <div>
         <DragonCard
-          type={this.props.randomDragon}
+          type={this.props.randomDragon.type}
+          level={this.props.randomDragon.level}
+          currentHP={this.props.randomDragon.currenthp}
+          maxHP={this.props.randomDragon.maxhp}
+          strength={this.props.randomDragon.strength}
+          defense={this.props.randomDragon.defense}
         />
-        <button className="accept-dragon" onClick={() => {this.props.addToUserDragons(this.props.randomDragon)}}>Accept This Dragon</button>
+        <button className="accept-dragon" onClick={this.addDragonToCollection}>Accept This Dragon</button>
         <button className="get-new-dragon" onClick={this.getNewDragon}>Get New Dragon</button>
       </div>
     );
@@ -37,8 +50,8 @@ class GetRandomDragon extends Component {
 }
 
 
-function mapStateToProps({ dragons }) {
-  return { dragons };
+function mapStateToProps({ dragons, randomDragon }) {
+  return { dragons, randomDragon };
 };
 
-export default connect(mapStateToProps, { getRandomDragon })(GetRandomDragon);
+export default connect(mapStateToProps, { getRandomDragon, addToUserDragons })(GetRandomDragon);
