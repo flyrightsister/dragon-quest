@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Carousel from 'react-bootstrap/lib/Carousel';
 import DragonCard from '../Components/dragon_card.js';
 import { addToUserDragons } from '../actions/index';
+import './card_carousel.css';
 
 class ControlledCarousel extends Component {
   constructor(props, context) {
@@ -48,17 +49,15 @@ class ControlledCarousel extends Component {
                 key={this.generateKey()}
                 className="carousel-item">
                 <DragonCard
-                  imageUrl={dragon.imageUrl}
+                  imageUrl={dragon.imageurl}
                   type={dragon.type}
                   level={dragon.level}
-                  currentHP={dragon.currentHP}
-                  maxHP={dragon.maxHP}
+                  currentHP={dragon.currenthp}
+                  maxHP={dragon.maxhp}
                   strength={dragon.strength}
                   defense={dragon.defense}
                 />
-                <Carousel.Caption>
-                  <h3>{dragon.type}</h3>
-                </Carousel.Caption>
+                <Carousel.Caption></Carousel.Caption>
               </Carousel.Item>
             )})}
           </Carousel>

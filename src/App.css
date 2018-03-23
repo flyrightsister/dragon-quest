@@ -2,22 +2,25 @@
   text-align: center;
 }
 
-.carousel {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 40px;
-}
-
-.carousel-item {
-  background-color: blue;
-  height: 400px;
-  width: 400px;
+.dragon-collection-description {
+  margin: 20px;
 }
 
 .dragon-card-container {
+  background-color: #000;
   border: 1px solid grey;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  height: 400px;
   margin: 20px auto;
-  width: 400px;
+  padding: 20px 10px;
+  width: 300px;
+}
+
+.dragon-card-image {
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 150px;
+  width: 250px;
 }
