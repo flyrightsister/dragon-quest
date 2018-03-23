@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import DragonCard from '../Components/dragon_card.js';
 import { getRandomDragon } from '../actions';
 import { addToUserDragons } from '../actions';
+import './get_random_dragon.css';
 
 class GetRandomDragon extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-
+      randomMode: true,
     }
 
     this.getNewDragon = this.getNewDragon.bind(this);
@@ -32,9 +33,12 @@ class GetRandomDragon extends Component {
 
 
   render() {
+    console.log('randomDragon props', this.props.randomDragon);
     return (
       <div>
         <DragonCard
+          randomMode={this.state.randomMode}
+          imageUrl={this.props.randomDragon.imageurl}
           type={this.props.randomDragon.type}
           level={this.props.randomDragon.level}
           currentHP={this.props.randomDragon.currenthp}
@@ -42,8 +46,10 @@ class GetRandomDragon extends Component {
           strength={this.props.randomDragon.strength}
           defense={this.props.randomDragon.defense}
         />
-        <button className="accept-dragon" onClick={this.addDragonToCollection}>Accept This Dragon</button>
-        <button className="get-new-dragon" onClick={this.getNewDragon}>Get New Dragon</button>
+        <div className="random-dragon-choices">
+          <button className="accept-dragon-btn btn btn-success" onClick={this.addDragonToCollection}>Accept This Dragon</button>
+          <button className="get-new-dragon-btn btn btn-danger" onClick={this.getNewDragon}>Get New Dragon</button>
+        </div>
       </div>
     );
   }
