@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { enterFightMode } from '../actions/index';
 
-export default class DragonCard extends Component {
+class DragonCard extends Component {
   constructor(props) {
     super(props);
 
@@ -29,7 +31,7 @@ export default class DragonCard extends Component {
           <p>HP: {this.props.currentHP} / {this.props.maxHP}</p>
           <p>Strength: {this.props.strength}</p>
           <p>Defense: {this.props.defense}</p>
-          <button className="fight-btn btn btn-primary">Fight</button>
+          <button className="fight-btn btn btn-primary" onClick={this.props.enterFightMode(this.props.dragon)}>Fight</button>
         </div>
       )
     }
@@ -40,3 +42,9 @@ export default class DragonCard extends Component {
     );
   }
 }
+
+function mapStateToProps({ fightMode }) {
+  return { fightMode };
+}
+
+export default connect(mapStateToProps, { enterFightMode })(DragonCard);

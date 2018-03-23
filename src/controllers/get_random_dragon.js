@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
-import DragonCard from '../Components/dragon_card.js';
+import DragonCard from '../controllers/dragon_card.js';
 import { getRandomDragon } from '../actions';
 import { addToUserDragons } from '../actions';
 import './get_random_dragon.css';
@@ -28,7 +28,7 @@ class GetRandomDragon extends Component {
 
   addDragonToCollection() {
     this.props.addToUserDragons(this.props.randomDragon)
-    this.props.getRandomDragon(1);
+    this.props.acceptDragon();
   }
 
 

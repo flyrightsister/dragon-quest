@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Carousel from 'react-bootstrap/lib/Carousel';
-import DragonCard from '../Components/dragon_card.js';
+import DragonCard from '../controllers/dragon_card.js';
 import { addToUserDragons } from '../actions/index';
 import './card_carousel.css';
 
@@ -43,12 +43,14 @@ class ControlledCarousel extends Component {
           direction={direction}
           onSelect={this.handleSelect}
           >
-            {this.props.dragons.map((dragon) => {
+            {this.props.dragons.map((dragon, index) => {
               return (
               <Carousel.Item
-                key={this.generateKey()}
+                key={index}
                 className="carousel-item">
                 <DragonCard
+                  key={this.generateKey()}
+                  dragon={dragon}
                   imageUrl={dragon.imageurl}
                   type={dragon.type}
                   level={dragon.level}
