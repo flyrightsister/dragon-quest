@@ -15,11 +15,11 @@ class GetRandomDragon extends Component {
 
     this.getNewDragon = this.getNewDragon.bind(this);
     this.addDragonToCollection = this.addDragonToCollection.bind(this);
+    this.generateDragonId = this.generateDragonId.bind(this);
   }
 
   componentDidMount() {
     this.props.getRandomDragon(1);
-    console.log('componentDidMount is being called in get_random_dragon')
   }
 
   getNewDragon() {
@@ -31,12 +31,16 @@ class GetRandomDragon extends Component {
     this.props.acceptDragon();
   }
 
+  generateDragonId() {
+    const randomNum = Math.floor(Math.random() * 1000);
+    return `${randomNum}_${new Date().getTime()}`
+  }
 
   render() {
-    console.log('randomDragon props', this.props.randomDragon);
     return (
       <div>
         <DragonCard
+          dragonId={this.generateDragonId}
           randomMode={this.state.randomMode}
           imageUrl={this.props.randomDragon.imageurl}
           type={this.props.randomDragon.type}

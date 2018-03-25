@@ -26,14 +26,8 @@ export function addToUserDragons(dragon) {
 }
 
 export function enterFightMode(dragon) {
-  return [
-    {
-      type: ENTER_FIGHT,
-      payload: true,
-    },
-    {
+  return {
       type: FIGHTING_DRAGON,
       payload: dragon,
     }
-  ]
 }
