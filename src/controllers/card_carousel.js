@@ -49,7 +49,7 @@ class ControlledCarousel extends Component {
                 key={index}
                 className="carousel-item">
                 <DragonCard
-                  key={this.generateKey()}
+                  key={this.generateKey}
                   dragon={dragon}
                   imageUrl={dragon.imageurl}
                   type={dragon.type}

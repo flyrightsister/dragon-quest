@@ -31,7 +31,7 @@ class DragonCard extends Component {
           <p>HP: {this.props.currentHP} / {this.props.maxHP}</p>
           <p>Strength: {this.props.strength}</p>
           <p>Defense: {this.props.defense}</p>
-          <button className="fight-btn btn btn-primary" onClick={this.props.enterFightMode(this.props.dragon)}>Fight</button>
+          <button className="fight-btn btn btn-primary" onClick={() => {this.props.enterFightMode(this.props.dragon)}}>Fight</button>
         </div>
       )
     }

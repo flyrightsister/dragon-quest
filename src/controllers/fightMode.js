@@ -11,15 +11,22 @@ class Fight extends Component {
   render() {
     return (
       <div className="fight-container">
-        <DragonCard />
+        <DragonCard
+          type={this.props.type}
+          level={this.props.level}
+          currenthp={this.props.currenthp}
+          maxhp={this.props.maxhp}
+          strength={this.props.strength}
+          defense={this.props.defense}
+        />
         <Human />
       </div>
     )
   }
 }
 
-function mapStateToProps({ fightMode }) {
-  return { fightMode };
+function mapStateToProps({ fightingDragon }) {
+  return { fightingDragon };
 }
 
 export default connect(mapStateToProps)(Fight);
