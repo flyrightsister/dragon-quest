@@ -58,6 +58,7 @@ class ControlledCarousel extends Component {
                   maxHP={dragon.maxhp}
                   strength={dragon.strength}
                   defense={dragon.defense}
+                  fightMode={this.props.toggleFightMode}
                 />
                 <Carousel.Caption></Carousel.Caption>
               </Carousel.Item>

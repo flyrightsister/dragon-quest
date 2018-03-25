@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DragonCard from './dragon_card';
-import Human from './human_card';
+import Human from '../Components/human_card';
 
 class Fight extends Component {
-  constructor(props) {
-    super(props);
-  };
-
+  
   render() {
     return (
       <div className="fight-container">

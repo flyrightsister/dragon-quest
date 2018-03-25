@@ -26,15 +26,17 @@ class GetRandomDragon extends Component {
     this.props.getRandomDragon(1);
   }
 
-  addDragonToCollection() {
-    this.props.addToUserDragons(this.props.randomDragon)
-    this.props.acceptDragon();
-  }
-
   generateDragonId() {
     const randomNum = Math.floor(Math.random() * 1000);
     return `${randomNum}_${new Date().getTime()}`
   }
+
+  addDragonToCollection() {
+    this.props.randomDragon.dragonId = this.generateDragonId();
+    this.props.addToUserDragons(this.props.randomDragon)
+    this.props.acceptDragon();
+  }
+
 
   render() {
     return (
