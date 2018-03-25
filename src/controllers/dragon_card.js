@@ -7,6 +7,13 @@ class DragonCard extends Component {
     super(props);
 
     this.state = {}
+
+    this.createFightMode = this.createFightMode.bind(this);
+  }
+
+  createFightMode() {
+    this.props.toggleFightMode()
+    this.props.enterFightMode(this.props.dragon)
   }
 
   render() {
@@ -31,7 +38,7 @@ class DragonCard extends Component {
           <p>HP: {this.props.currentHP} / {this.props.maxHP}</p>
           <p>Strength: {this.props.strength}</p>
           <p>Defense: {this.props.defense}</p>
-          <button className="fight-btn btn btn-primary" onClick={() => {this.props.enterFightMode(this.props.dragon)}}>Fight</button>
+          <button className="fight-btn btn btn-primary" onClick={this.createFightMode}>Fight</button>
         </div>
       )
     }
