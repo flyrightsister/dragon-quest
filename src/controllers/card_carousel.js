@@ -51,14 +51,14 @@ class ControlledCarousel extends Component {
                 <DragonCard
                   key={this.generateKey}
                   dragon={dragon}
-                  imageUrl={dragon.imageurl}
+                  imageurl={dragon.imageurl}
                   type={dragon.type}
                   level={dragon.level}
-                  currentHP={dragon.currenthp}
-                  maxHP={dragon.maxhp}
+                  currenthp={dragon.currenthp}
+                  maxhp={dragon.maxhp}
                   strength={dragon.strength}
                   defense={dragon.defense}
-                  fightMode={this.props.toggleFightMode}
+                  toggleFightMode={this.props.toggleFightMode}
                 />
                 <Carousel.Caption></Carousel.Caption>
               </Carousel.Item>

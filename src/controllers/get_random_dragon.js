@@ -44,11 +44,11 @@ class GetRandomDragon extends Component {
         <DragonCard
           dragonId={this.generateDragonId}
           randomMode={this.state.randomMode}
-          imageUrl={this.props.randomDragon.imageurl}
+          imageurl={this.props.randomDragon.imageurl}
           type={this.props.randomDragon.type}
           level={this.props.randomDragon.level}
-          currentHP={this.props.randomDragon.currenthp}
-          maxHP={this.props.randomDragon.maxhp}
+          currenthp={this.props.randomDragon.currenthp}
+          maxhp={this.props.randomDragon.maxhp}
           strength={this.props.randomDragon.strength}
           defense={this.props.randomDragon.defense}
         />
