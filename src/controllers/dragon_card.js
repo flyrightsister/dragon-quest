@@ -21,10 +21,10 @@ class DragonCard extends Component {
     if (this.props.randomMode) {
       card = (
         <div className="dragon-card-container">
-          <img className="dragon-card-image" src={this.props.imageUrl} alt="dragon" />
+          <img className="dragon-card-image" src={this.props.imageurl} alt="dragon" />
           <h4>{this.props.type}</h4>
           <p>Level: {this.props.level}</p>
-          <p>HP: {this.props.currentHP} / {this.props.maxHP}</p>
+          <p>HP: {this.props.currenthp} / {this.props.maxhp}</p>
           <p>Strength: {this.props.strength}</p>
           <p>Defense: {this.props.defense}</p>
         </div>
@@ -32,10 +32,10 @@ class DragonCard extends Component {
     } else {
       card = (
         <div className="dragon-card-container">
-          <img className="dragon-card-image" src={this.props.imageUrl} alt="dragon" />
+          <img className="dragon-card-image" src={this.props.imageurl} alt="dragon" />
           <h4>{this.props.type}</h4>
           <p>Level: {this.props.level}</p>
-          <p>HP: {this.props.currentHP} / {this.props.maxHP}</p>
+          <p>HP: {this.props.currenthp} / {this.props.maxhp}</p>
           <p>Strength: {this.props.strength}</p>
           <p>Defense: {this.props.defense}</p>
           <button className="fight-btn btn btn-primary" onClick={this.createFightMode}>Fight</button>

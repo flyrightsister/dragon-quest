@@ -34,9 +34,15 @@ class App extends Component {
   }
 
   toggleFightMode() {
-    this.setState({
-      fightMode: true,
-    })
+    if (this.state.fightMode) {
+      this.setState({
+        fightMode: false,
+      })
+    } else {
+      this.setState({
+        fightMode: true,
+      })
+    }
   }
 
   render() {
@@ -56,10 +62,11 @@ class App extends Component {
     }
 
     if (this.state.fightMode) {
-      console.log('this.state.fightMode in app', this.state.fightMode);
       mainView = (
         <div className="fight-screen-container">
-          <Fight />
+          <Fight
+            toggleFightMode={this.toggleFightMode}
+          />
         </div>
       )
     } else {
@@ -77,7 +84,7 @@ class App extends Component {
           </div>
           <div className="carousel">
             <CardCarousel
-              fightMode={this.toggleFightMode}
+              toggleFightMode={this.toggleFightMode}
             />
           </div>
           {randomDragon}
